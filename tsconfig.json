@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "tvmaze": [
+        "dist/tvmaze"
+      ],
+      "tvmaze/*": [
+        "dist/tvmaze/*"
+      ],
+      "mlkms-common-ui": [
+        "dist/mlkms-common-ui"
+      ],
+      "mlkms-common-ui/*": [
+        "dist/mlkms-common-ui/*"
+      ]
+    }
   }
 }

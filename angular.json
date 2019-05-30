@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -128,6 +129,76 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tvmaze": {
+      "root": "projects/tvmaze",
+      "sourceRoot": "projects/tvmaze/src",
+      "projectType": "library",
+      "prefix": "tm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tvmaze/tsconfig.lib.json",
+            "project": "projects/tvmaze/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tvmaze/src/test.ts",
+            "tsConfig": "projects/tvmaze/tsconfig.spec.json",
+            "karmaConfig": "projects/tvmaze/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tvmaze/tsconfig.lib.json",
+              "projects/tvmaze/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "mlkms-common-ui": {
+      "root": "projects/mlkms-common-ui",
+      "sourceRoot": "projects/mlkms-common-ui/src",
+      "projectType": "library",
+      "prefix": "mlkms",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mlkms-common-ui/tsconfig.lib.json",
+            "project": "projects/mlkms-common-ui/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mlkms-common-ui/src/test.ts",
+            "tsConfig": "projects/mlkms-common-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/mlkms-common-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mlkms-common-ui/tsconfig.lib.json",
+              "projects/mlkms-common-ui/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
